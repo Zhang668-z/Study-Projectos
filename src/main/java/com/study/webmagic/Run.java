@@ -8,6 +8,7 @@ import us.codecraft.webmagic.Spider;
  */
 public class Run {
     public static void main(String[] args) {
+
         Spider.create(new PicProcessor()).addUrl(SiteUrls.SITEURL.getUrl())
                 .thread(5).run();
     }
