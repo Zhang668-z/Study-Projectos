@@ -17,6 +17,7 @@ import java.util.List;
 /**
  * @author zhangzhen
  * @date 2020/12/18 20:47
+ * 通过URL下载图片
  */
 public class DownloadUtil {
 

@@ -7,10 +7,10 @@ package com.study.webmagic;
  */
 public enum SiteUrls {
 
-    SITEURL("http://pic.netbian.com"),
-    INDEXPAGE("http://pic.netbian.com/4kdongman"),
-    DETAILPAGE("http://pic.netbian.com/tupian"),
-    DOWNURL("http://pic.netbian.com/downpic.php?id=");
+    SITEURL("http://pic.netbian.com"), // 首页网址前缀
+    PAGEURLPREFIX("http://pic.netbian.com/4kdongman/index_"), // 多页网址前缀(第一页、第二页等)
+    DETAILPAGE("http://pic.netbian.com/tupian"), // 当前图片详情页网址前缀
+    DOWNURL("http://pic.netbian.com/downpic.php?id="); // 图片下载地址前缀
 
     private String url;
 
