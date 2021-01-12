@@ -5,7 +5,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedOutputStream;
@@ -31,11 +31,11 @@ public class DownRandomPic {
         // 将请求返回的不支持的Content-type类型 text/json 手动加入到http消息对象的媒体类型列表
         List<HttpMessageConverter<?>> converterList = template.getMessageConverters();
         for (HttpMessageConverter<?> httpMessageConverter : converterList) {
-            if (httpMessageConverter instanceof MappingJacksonHttpMessageConverter) {
+            if (httpMessageConverter instanceof MappingJackson2HttpMessageConverter) {
                 try {
                     ArrayList<MediaType> mediaTypeArrayList = new ArrayList<>(httpMessageConverter.getSupportedMediaTypes());
                     mediaTypeArrayList.add(MediaType.parseMediaType("text/json"));
-                    ((MappingJacksonHttpMessageConverter) httpMessageConverter).setSupportedMediaTypes(mediaTypeArrayList);
+                    ((MappingJackson2HttpMessageConverter) httpMessageConverter).setSupportedMediaTypes(mediaTypeArrayList);
                 }catch (Exception e) {
                     e.printStackTrace();
                 }
